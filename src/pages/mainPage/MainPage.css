@@ -1,0 +1,17 @@
+.MainPage__container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainPage__buttonsBlock {
+	width: 40vw;
+	height: 100px;
+	padding: 50px;
+	border: 1px solid #dedede;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
