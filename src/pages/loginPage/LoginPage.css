@@ -1,0 +1,32 @@
+.loginPage {
+	width: 90vw;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.loginPage__container {
+	padding: 50px;
+	border: 1px solid #dedede;
+	margin: 50px auto 0;
+}
+
+.loginPage__field {
+	margin-bottom: 20px !important;
+}
+
+.loginPage__title {
+	text-align: center !important;
+	font-weight: bold !important;
+	margin-bottom: 30px !important;
+}
+
+.error_field {
+	margin-bottom: 20px;
+}
+
+.loginPage__buttonsBlock {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
