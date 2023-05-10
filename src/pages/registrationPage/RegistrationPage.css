@@ -1,0 +1,34 @@
+.registrationPage__container {
+	padding: 50px;
+	border: 1px solid #dedede;
+	margin: 50px auto;
+}
+
+.registrationPage {
+	width: 90vw;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.registrationPage__field {
+	margin-bottom: 20px !important;
+}
+
+.registrationPage__title {
+	text-align: center !important;
+	font-weight: bold !important;
+	margin-bottom: 30px !important;
+}
+
+.registrationPage__avatar {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.registrationPage__buttonsBlock {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
