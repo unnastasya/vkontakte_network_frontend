@@ -1,0 +1,16 @@
+.error__text {
+	font-family: "Montserrat";
+	color: #000;
+	text-align: center;
+	margin-bottom: var(--gap-2xl);
+}
+
+.error__button {
+	display: block;
+	margin: 0 auto;
+}
+
+.error__block {
+	margin: 100px auto;
+	width: 80vw;
+}

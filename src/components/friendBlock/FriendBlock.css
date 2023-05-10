@@ -1,0 +1,12 @@
+.friendBlock__usersPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.friendBlock__friendsPage {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}

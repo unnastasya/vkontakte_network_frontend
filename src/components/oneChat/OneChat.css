@@ -1,0 +1,17 @@
+.oneChat__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
+}
+.oneChat {
+	display: grid;
+	grid-template-rows: 50px auto 50px;
+	grid-row-gap: 10px;
+}
+
+.oneChat__messages {
+	display: flex;
+	flex-direction: column-reverse;
+	overflow: auto;
+}

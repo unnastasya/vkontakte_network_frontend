@@ -1,0 +1,9 @@
+.friends__block__true {
+	display: flex;
+	flex-direction: column;
+}
+
+.friends__block__false {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+}

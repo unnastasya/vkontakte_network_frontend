@@ -1,0 +1,21 @@
+.post {
+	position: relative;
+}
+
+.post__photo {
+	width: 100%;
+}
+.post__userInfo {
+	display: flex;
+}
+
+.post__likeBlock {
+	display: flex;
+	alidn-items: center;
+}
+
+.post__deleteButton {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
