@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Alert, Button, Paper, TextField, Typography } from "@mui/material";
 import { loginValidationSchema } from "./LoginPageValidation";
 import { Controller, useForm } from "react-hook-form";
@@ -48,9 +48,11 @@ export function LoginPage() {
 		navigate("/registration");
 	};
 
-	if (isAuth) {
-		navigate(`/user/${userId}`);
-	}
+	useEffect(() => {
+		if (isAuth) {
+			navigate(`/user/${userId}`);
+		}
+	}, [isAuth]);
 
 	return (
 		<div className="loginPage">

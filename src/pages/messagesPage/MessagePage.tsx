@@ -71,7 +71,6 @@ export function MessagesPage() {
 										onClick={() => onClick(chat)}
 									>
 										<Chat
-											chat={chat}
 											friendId={
 												activeUser?._id ==
 												chat.members[0]

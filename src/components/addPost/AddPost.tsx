@@ -59,7 +59,7 @@ export function AddPost() {
 			const file = event.target.files[0];
 			dataImage.append("image", file);
 			const { data } = await axios.post(
-				"http://localhost:3001/upload",
+				"https://vkontakte-network-backend-ec6s.vercel.app/upload",
 				dataImage,
 				{
 					headers: {
@@ -67,7 +67,7 @@ export function AddPost() {
 					},
 				}
 			);
-			setImageURL("http://localhost:3001" + data.url);
+			setImageURL("https://vkontakte-network-backend-ec6s.vercel.app" + data.url);
 		} catch (error) {
 			alert("Ошибка при загрузке файла");
 		}

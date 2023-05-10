@@ -65,7 +65,7 @@ export function RegistrationPage() {
 		birthdayDate: string;
 		age: number;
 	}) => {
-		value.avatarUrl = "http://localhost:3001" + imageURL;
+		value.avatarUrl = "https://vkontakte-network-backend-ec6s.vercel.app" + imageURL;
 		value.birthdayDate = String(birthdayDate);
 		value.fullName = value.name + " " + value.surname;
 		if (birthdayDate) {
@@ -115,7 +115,7 @@ export function RegistrationPage() {
 						<Avatar
 							onClick={() => inputFileRef.current?.click()}
 							sx={{ width: 100, height: 100 }}
-							src={`http://localhost:3001${imageURL}`}
+							src={`https://vkontakte-network-backend-ec6s.vercel.app${imageURL}`}
 						/>
 					</div>
 					<input
