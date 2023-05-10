@@ -1,0 +1,40 @@
+.userPage {
+	display: grid;
+	grid-template-columns: auto 30%;
+	margin: 0;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	padding: 0 10px;
+}
+
+.userPage__friendsBlock {
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
+
+.userPage__info {
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+
+.userPage__postsBlock,
+.userPage__posts {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-row-gap: 10px;
+	grid-column-start: 1;
+	grid-column-end: 2;
+}
+
+.userPage__imageBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+}
