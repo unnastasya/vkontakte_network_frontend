@@ -24,7 +24,6 @@ function App() {
 	return (
 		<div className="App">
 			<Routes>
-				{/* <Route path="/" element={<Page />}> */}
 				<Route index element={<MainPage />}></Route>
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/registration" element={<RegistrationPage />} />
