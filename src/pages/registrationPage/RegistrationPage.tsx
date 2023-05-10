@@ -13,6 +13,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { postLogin } from "../../api/auth";
 import { useAppSelector } from "../../store";
 import { isAuthUserSelector } from "../../store/auth";
+import { RegisterUserType } from "../../types/UserType";
 
 export function RegistrationPage() {
 	const navigate = useNavigate();
@@ -53,19 +54,9 @@ export function RegistrationPage() {
 		resolver: yupResolver(registrationValidationSchema),
 	});
 
-	const onSubmit = (value: {
-		name: string;
-		surname: string;
-		fullName: string;
-		email: string;
-		password: string;
-		avatarUrl: string;
-		city: string;
-		studyPlace: string;
-		birthdayDate: string;
-		age: number;
-	}) => {
-		value.avatarUrl = "https://vkontakte-network-backend-ec6s.vercel.app" + imageURL;
+	const onSubmit = (value: RegisterUserType) => {
+		value.avatarUrl =
+			"https://vkontakte-network-backend-ec6s.vercel.app" + imageURL;
 		value.birthdayDate = String(birthdayDate);
 		value.fullName = value.name + " " + value.surname;
 		if (birthdayDate) {

@@ -14,3 +14,17 @@ export type UserType = {
 	__v: number;
 	_id: string;
 };
+
+export type RegisterUserType = {
+	[index: string]: any;
+	name: string;
+	surname: string;
+	fullName: string;
+	email: string;
+	password: string;
+	avatarUrl: string;
+	city: string;
+	studyPlace: string;
+	birthdayDate: string;
+	age: number;
+};

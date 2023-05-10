@@ -5,7 +5,7 @@ import { UserType } from "../types/UserType";
 
 export const postLogin = (params: { email: string; password: string }): Promise<UserType> => {
 	return axios
-		.post<any>(`https://vkontakte-network-backend-ec6s.vercel.app/auth/login`, qs.stringify(params), {
+		.post<UserType>(`https://vkontakte-network-backend-ec6s.vercel.app/auth/login`, qs.stringify(params), {
 			headers: {
 				authorization: window.localStorage.getItem("activeUserId"),
 			},
@@ -14,7 +14,7 @@ export const postLogin = (params: { email: string; password: string }): Promise<
 		.catch((error) => error);
 };
 
-export const getUser = (id: string): Promise<any> => {
+export const getUser = (id: string): Promise<UserType> => {
 	return axios
 		.get(`https://vkontakte-network-backend-ec6s.vercel.app/user/${id}`, {
 			headers: {

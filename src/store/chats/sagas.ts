@@ -5,6 +5,7 @@ import { ChatsActions } from "./slice";
 import { getChats } from "../../api/chat";
 import { addMessageDataSelector, chatIdSelector, userIdSelector } from "./selectors";
 import { addMessage, getMessages } from "../../api/messages";
+import { AddChatType } from "../../types/ChatType";
 
 function* getUsersChatsSaga() {
 	try {
@@ -30,7 +31,7 @@ function* getChatsMessagesSaga() {
 
 function* addChatsMessagesSaga() {
 	try {
-		const data: { text: string; sender: string, chatId: string } = yield select(addMessageDataSelector);
+		const data: AddChatType = yield select(addMessageDataSelector);
         yield call(addMessage, data);
 		const messages: any[] = yield call(getMessages, data.chatId);
 
