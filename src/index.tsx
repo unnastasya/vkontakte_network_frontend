@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<ThemeProvider theme={theme}>
-		<BrowserRouter>
+		<BrowserRouter basename={`/vkontakte_network_frontend/}`}>
 			<Provider store={store}>
 				<ErrorBoundary>
 					<App />
