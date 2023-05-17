@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.81c6d2c9.css",
-    "main.js": "/static/js/main.c37a3afe.js",
-    "index.html": "/index.html",
-    "main.81c6d2c9.css.map": "/static/css/main.81c6d2c9.css.map",
-    "main.c37a3afe.js.map": "/static/js/main.c37a3afe.js.map"
+    "main.css": "/vkontakte_network_frontend/static/css/main.81c6d2c9.css",
+    "main.js": "/vkontakte_network_frontend/static/js/main.c37a3afe.js",
+    "index.html": "/vkontakte_network_frontend/index.html",
+    "main.81c6d2c9.css.map": "/vkontakte_network_frontend/static/css/main.81c6d2c9.css.map",
+    "main.c37a3afe.js.map": "/vkontakte_network_frontend/static/js/main.c37a3afe.js.map"
   },
   "entrypoints": [
     "static/css/main.81c6d2c9.css",
