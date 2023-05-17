@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
 import { Provider } from "react-redux";
@@ -14,12 +14,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<ThemeProvider theme={theme}>
-		<BrowserRouter>
+		<HashRouter>
 			<Provider store={store}>
 				<ErrorBoundary>
 					<App />
 				</ErrorBoundary>
 			</Provider>
-		</BrowserRouter>
+		</HashRouter>
 	</ThemeProvider>
 );
