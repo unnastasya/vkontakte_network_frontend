@@ -2,7 +2,7 @@
   "name": "vkontakte_network_frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://unnastasya.github.io/vkontakte_network_frontend/",
+  "homepage": "https://unnastasya.github.io/vkontakte_network_frontend/#",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.1.0",
