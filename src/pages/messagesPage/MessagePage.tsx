@@ -15,6 +15,7 @@ import {
 	isOpenChatSelector,
 	usersChatsSelector,
 } from "../../store/chats";
+import { ChatType } from "../../types/ChatType";
 
 const CssPaper = styled(Paper)({
 	background: "#3d3d3d",
@@ -64,7 +65,7 @@ export function MessagesPage() {
 						<h1>Сообщений пока нет</h1>
 					) : (
 						<CssPaper sx={{ width: "100%", padding: "10px" }}>
-							{chats.map((chat: any) => {
+							{chats.map((chat: ChatType) => {
 								return (
 									<div
 										key={chat._id}

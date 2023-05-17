@@ -28,3 +28,8 @@ export type RegisterUserType = {
 	birthdayDate: string;
 	age: number;
 };
+
+export type LoginUserType = {
+	email: string;
+	password: string;
+};

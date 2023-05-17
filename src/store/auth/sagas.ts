@@ -8,11 +8,6 @@ import {
 	requestUserDataSelector,
 } from "./selectors";
 
-export type LoginUserType = {
-	email: string;
-	password: string;
-};
-
 function* loginSaga() {
 	try {
 		const requestData: { email: string; password: string } = yield select(

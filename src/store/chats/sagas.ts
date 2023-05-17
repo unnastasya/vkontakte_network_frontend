@@ -5,12 +5,12 @@ import { ChatsActions } from "./slice";
 import { getChats } from "../../api/chat";
 import { addMessageDataSelector, chatIdSelector, userIdSelector } from "./selectors";
 import { addMessage, getMessages } from "../../api/messages";
-import { AddChatType } from "../../types/ChatType";
+import { AddMessageType, ChatType, MessageType } from "../../types/ChatType";
 
 function* getUsersChatsSaga() {
 	try {
 		const userId: string = yield select(userIdSelector);
-		const data: any[] = yield call(getChats, userId);
+		const data: ChatType[] = yield call(getChats, userId);
 
 		yield put(ChatsActions.successUsersChats(data));
 	} catch (e: any) {
@@ -21,7 +21,7 @@ function* getUsersChatsSaga() {
 function* getChatsMessagesSaga() {
 	try {
 		const chatId: string = yield select(chatIdSelector);
-		const data: any[] = yield call(getMessages, chatId);
+		const data: MessageType[] = yield call(getMessages, chatId);
 
 		yield put(ChatsActions.successChatsMessages(data));
 	} catch (e: any) {
@@ -31,9 +31,9 @@ function* getChatsMessagesSaga() {
 
 function* addChatsMessagesSaga() {
 	try {
-		const data: AddChatType = yield select(addMessageDataSelector);
+		const data: AddMessageType = yield select(addMessageDataSelector);
         yield call(addMessage, data);
-		const messages: any[] = yield call(getMessages, data.chatId);
+		const messages: MessageType[] = yield call(getMessages, data.chatId);
 
 		yield put(ChatsActions.successChatsMessages(messages));
 	} catch (e: any) {

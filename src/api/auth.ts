@@ -1,9 +1,9 @@
 import axios from "axios";
 import qs from "qs";
-import { UserType } from "../types/UserType";
+import { LoginUserType, UserType } from "../types/UserType";
 
 
-export const postLogin = (params: { email: string; password: string }): Promise<UserType> => {
+export const postLogin = (params: LoginUserType): Promise<UserType> => {
 	return axios
 		.post<UserType>(`https://vkontakte-network-backend-ec6s.vercel.app/auth/login`, qs.stringify(params), {
 			headers: {

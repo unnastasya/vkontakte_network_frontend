@@ -17,11 +17,6 @@ import {
 import { loginUserDataSelector } from "../auth";
 import { UserType } from "../../types/UserType";
 
-export type LoginUserType = {
-	email: string;
-	password: string;
-};
-
 function* getUsersPostsSaga() {
 	try {
 		const userId: string = yield select(userIdDataSelector);

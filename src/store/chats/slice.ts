@@ -1,8 +1,9 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AddMessageType, ChatType, MessageType } from "../../types/ChatType";
 
 export type ChatsStateType = {
-    userId: string;
-	usersChats: any[];
+	userId: string;
+	usersChats: ChatType[];
 	isLoadingUsersChats: boolean;
 	hasErrorUsersChats: boolean;
 	usersPostsErrorMessage?: string;
@@ -11,16 +12,16 @@ export type ChatsStateType = {
 
 	chatId: string;
 
-	chatsMessages: any[];
+	chatsMessages: MessageType[];
 	isLoadingChatsMessages: boolean;
 	hasErrorChatsMessages: boolean;
 	chatsMessagesErrorMessage: string;
 
-	addMessageData?: { text: string; sender: string, chatId: string };
+	addMessageData?: { text: string; sender: string; chatId: string };
 };
 
 const initialState: ChatsStateType = {
-    userId: "",
+	userId: "",
 	usersChats: [],
 	isLoadingUsersChats: false,
 	hasErrorUsersChats: false,
@@ -45,10 +46,10 @@ const changeUserId: CaseReducer<ChatsStateType, PayloadAction<string>> = (
 	state.userId = payload;
 };
 
-const changeAddMessageData: CaseReducer<ChatsStateType, PayloadAction<any>> = (
-	state,
-	{ payload }
-) => {
+const changeAddMessageData: CaseReducer<
+	ChatsStateType,
+	PayloadAction<AddMessageType>
+> = (state, { payload }) => {
 	state.addMessageData = payload;
 };
 
@@ -68,7 +69,7 @@ const requestChatsMessages: CaseReducer<ChatsStateType> = (state) => {
 
 const successChatsMessages: CaseReducer<
 	ChatsStateType,
-	PayloadAction<any[]>
+	PayloadAction<MessageType[]>
 > = (state, { payload }) => {
 	state.isLoadingChatsMessages = false;
 	state.hasErrorChatsMessages = false;
@@ -89,10 +90,10 @@ const requestUsersChats: CaseReducer<ChatsStateType> = (state) => {
 	state.hasErrorUsersChats = false;
 };
 
-const successUsersChats: CaseReducer<ChatsStateType, PayloadAction<any[]>> = (
-	state,
-	{ payload }
-) => {
+const successUsersChats: CaseReducer<
+	ChatsStateType,
+	PayloadAction<ChatType[]>
+> = (state, { payload }) => {
 	state.isLoadingUsersChats = false;
 	state.hasErrorUsersChats = false;
 	state.usersChats = payload;
@@ -131,6 +132,6 @@ export const { actions: ChatsActions, reducer: ChatsReducer } = createSlice({
 		failureChatsMessages,
 		changeAddMessageData,
 		addMessage,
-        changeUserId
+		changeUserId,
 	},
 });

@@ -10,7 +10,7 @@ export const addMessage = (params: MessageType): Promise<any> => {
 		.catch((error) => error);
 };
 
-export const getMessages = (id: string): Promise<any> => {
+export const getMessages = (id: string): Promise<MessageType> => {
 	return axios
 		.get(`https://vkontakte-network-backend-ec6s.vercel.app/message/${id}`)
 		.then((response) => response.data)

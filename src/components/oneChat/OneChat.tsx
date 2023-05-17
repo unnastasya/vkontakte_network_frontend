@@ -20,6 +20,8 @@ import {
 	chatsMessagesSelector,
 	isLOadingChatsMessagesSelector,
 } from "../../store/chats";
+import { UserType } from "../../types/UserType";
+import { MessageType } from "../../types/ChatType";
 const CssPaper = styled(Paper)({
 	background: "#3d3d3d",
 	borderRadius: 10,
@@ -31,16 +33,9 @@ interface OneChatProps {
 	friendId: string;
 }
 
-export type MessageType = {
-	chatId: string;
-	sender: string;
-	text: string;
-	_id: string;
-};
-
 export function OneChat({ chatId, friendId }: OneChatProps) {
 	const dispatch = useAppDispatch();
-	const [friend, setFriend] = useState<any>();
+	const [friend, setFriend] = useState<UserType>();
 	const messages = useAppSelector(chatsMessagesSelector);
 	const isLoading = useAppSelector(isLOadingChatsMessagesSelector);
 

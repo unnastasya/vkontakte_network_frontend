@@ -7,6 +7,7 @@ import { loginUserDataSelector } from "../../../store/auth";
 import { ChatsActions } from "../../../store/chats";
 
 import "./AddMessage.css";
+import { AddMessageType } from "../../../types/ChatType";
 
 interface AddMessageProps {
 	chatId: string;
@@ -19,6 +20,7 @@ export function AddMessage({ chatId }: AddMessageProps) {
 		register,
 		handleSubmit,
 		formState: { errors },
+        reset
 	} = useForm({
 		defaultValues: {
 			text: "",
@@ -27,13 +29,14 @@ export function AddMessage({ chatId }: AddMessageProps) {
 	});
 
 	const onSubmit = async (data: { text: string }) => {
-		const value = {
+		const value: AddMessageType = {
 			...data,
 			sender: activeUser._id,
 			chatId: chatId,
 		};
 		dispatch(ChatsActions.changeAddMessageData(value));
 		dispatch(ChatsActions.addMessage());
+        reset();
 	};
 	return (
 		<>

@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import { Avatar, Divider, Typography } from "@mui/material";
 import { getUser } from "../../api/auth";
+import { UserType } from "../../types/UserType";
 
 interface ChatProps {
 	friendId: string;
 }
 
 export function Chat({ friendId }: ChatProps) {
-	const [friend, setFriend] = useState<any>();
+	const [friend, setFriend] = useState<UserType>();
 
 	useEffect(() => {
 		getUser(friendId).then((response) => setFriend(response));

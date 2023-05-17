@@ -1,16 +1,17 @@
 import { Avatar, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getUser } from "../../api/auth";
-import { MessageType } from "../oneChat/OneChat";
 
 import "./Message.css";
+import { UserType } from "../../types/UserType";
+import { MessageType } from "../../types/ChatType";
 
-interface MessagePost {
+interface MessageProps {
 	message: MessageType;
 }
 
-export function Message({ message }: MessagePost) {
-	const [sender, setSender] = useState<any>();
+export function Message({ message }: MessageProps) {
+	const [sender, setSender] = useState<UserType>();
 
 	useEffect(() => {
 		getUser(message.sender).then((response) => setSender(response));

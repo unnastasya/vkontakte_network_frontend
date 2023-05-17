@@ -6,6 +6,7 @@ import "./Friends.css";
 import { useAppSelector } from "../../store";
 import { usersFriendsSelector } from "../../store/friend";
 import styled from "@emotion/styled";
+import { UserType } from "../../types/UserType";
 
 interface FriendsProps {
 	// friends: { _id: string; fullName: string; avatarUrl: string }[];
@@ -41,7 +42,7 @@ export function Friends({ isFriendsPage = false }: FriendsProps) {
 		<CssPaper>
 			<h2 style={{ color: "#ffffff" }}> Друзья</h2>
 			<div className={`friends__block__${isFriendsPage}`}>
-				{friends.map((friend: any) => {
+				{friends.map((friend: string) => {
 					return (
 						<div key={friend}>
 							<FriendBlock

@@ -89,7 +89,7 @@ export function UserPage() {
 		let chatId = "";
 		await addChat({
 			senderId: activeUser._id,
-			receiverTd: id,
+			receiverId: id || "",
 		}).then((response) => (chatId = response));
 		dispatch(ChatsActions.changeChatId(chatId));
 		dispatch(ChatsActions.openChat());

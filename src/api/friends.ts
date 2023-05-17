@@ -28,7 +28,7 @@ export const deleteFriend = (id: string): Promise<any> => {
 		.catch((error) => error);
 };
 
-export const getFriends = (id: string): Promise<any> => {
+export const getFriends = (id: string): Promise<string[]> => {
 	console.log("IIIIIID", id);
 	return axios
 		.get<any>(`https://vkontakte-network-backend-ec6s.vercel.app/friends/${id}`, {

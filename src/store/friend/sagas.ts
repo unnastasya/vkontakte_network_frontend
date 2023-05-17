@@ -3,11 +3,6 @@ import { addFriendDataSelector, requestUserIdDataSelector } from "./selectors";
 import { addNewFriend, deleteFriend, getFriends } from "../../api/friends";
 import { FriendsActions } from "./slice";
 
-export type LoginUserType = {
-	email: string;
-	password: string;
-};
-
 function* addNewFriendSaga() {
 	try {
 		const requestData: string = yield select(addFriendDataSelector);

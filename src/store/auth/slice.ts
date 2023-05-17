@@ -1,5 +1,9 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserType } from "../../types/UserType";
+import {
+	LoginUserType,
+	RegisterUserType,
+	UserType,
+} from "../../types/UserType";
 
 export type UserStateType = {
 	userData: UserType;
@@ -8,13 +12,13 @@ export type UserStateType = {
 	hasErrorUserData: boolean;
 
 	loginUserData: UserType;
-	requestLoginUserData: { email: string; password: string };
+	requestLoginUserData: LoginUserType;
 	isLoadingLoginUserData: boolean;
 	hasErrorLoginUserData: boolean;
 	loginErrorMessage?: string;
 
 	regiesterData: UserType;
-	requestRegiesterData: any;
+	requestRegiesterData: RegisterUserType | null;
 	isLoadingRegiesterData: boolean;
 	hasErrorRegiesterData: boolean;
 	registerErrorMessage?: string;
@@ -76,7 +80,7 @@ const initialState: UserStateType = {
 		__v: 0,
 		_id: "",
 	},
-	requestRegiesterData: "",
+	requestRegiesterData: null,
 	isLoadingRegiesterData: false,
 	hasErrorRegiesterData: false,
 
@@ -156,7 +160,7 @@ const failureLogin: CaseReducer<UserStateType, PayloadAction<string>> = (
 
 const changeRequestRegisterData: CaseReducer<
 	UserStateType,
-	PayloadAction<any>
+	PayloadAction<RegisterUserType>
 > = (state, { payload }) => {
 	state.requestRegiesterData = payload;
 };

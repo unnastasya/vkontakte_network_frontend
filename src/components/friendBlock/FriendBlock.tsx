@@ -7,6 +7,7 @@ import { useAppDispatch } from "../../store";
 import { getUser } from "../../api/auth";
 
 import "./FriendBlock.css";
+import { UserType } from "../../types/UserType";
 
 interface FriendBlockProps {
 	userId: string;
@@ -19,7 +20,7 @@ export function FriendBlock({
 }: FriendBlockProps) {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
-	const [user, setUser] = useState<any>();
+	const [user, setUser] = useState<UserType>();
 
 	useEffect(() => {
 		getUser(userId || "").then((response) => setUser(response));
@@ -27,7 +28,7 @@ export function FriendBlock({
 
 	const onClick = (e: any) => {
 		e.stopPropagation();
-		navigate(`/user/${user._id}`);
+		navigate(`/user/${user?._id}`);
 	};
 
 	const onClickButtonDelete = async (e: any) => {
