@@ -46,7 +46,7 @@ export function FriendBlock({
 				/>
 				<div>
 					<Typography sx={{ color: "#ffffff" }}>
-						{user?.name}
+						{user?.fullName}
 					</Typography>
 					{isFriendsPage && (
 						<Button
